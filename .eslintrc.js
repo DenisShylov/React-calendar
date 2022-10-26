@@ -18,6 +18,7 @@ module.exports = {
     ecmaVersion: 2021,
     sourceType: 'module',
   },
+  plugins: ['react-hooks'],
   rules: {
     'import/extensions': 0,
     'no-console': 0,
@@ -30,6 +31,8 @@ module.exports = {
     'import/no-extraneous-dependencies': 0,
     'arrow-body-style': 1,
     'prefer-arrow-callback': 1,
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
   },
   settings: {
     'import/resolver': {
