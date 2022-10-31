@@ -1,6 +1,6 @@
 import React from 'react';
 import Day from '../day/Day';
-
+import RedLine from '../redLine/RedLine';
 import './week.scss';
 
 const Week = ({ weekDates, events }) => {
@@ -17,11 +17,13 @@ const Week = ({ weekDates, events }) => {
         );
 
         return (
-          <Day
-            key={dayStart.getDate()}
-            dataDay={dayStart.getDate()}
-            dayEvents={dayEvents}
-          />
+          <>
+            <Day
+              key={dayStart.getDate()}
+              dataDay={dayStart.getDate()}
+              dayEvents={dayEvents}
+            />
+          </>
         );
       })}
     </div>

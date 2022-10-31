@@ -1,9 +1,19 @@
 import React from 'react';
-
+import RedLine from '../redLine/RedLine';
 import Event from '../event/Event';
 import { formatMins } from '../../../src/utils/dateUtils.js';
 
-const Hour = ({ dataHour, hourEvents }) => {
+const Hour = ({ dataDay, dataHour, hourEvents }) => {
+  if (
+    dataDay === new Date().getDate() &&
+    dataHour + 1 === new Date().getHours() + 1
+  ) {
+    return (
+      <div className="calendar__time-slot" data-time={dataHour + 1}>
+        {<RedLine />}
+      </div>
+    );
+  }
   return (
     <div className="calendar__time-slot" data-time={dataHour + 1}>
       {/* if no events in the current hour nothing will render here */}

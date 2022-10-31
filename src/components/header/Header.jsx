@@ -1,31 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import moment from 'moment';
+import React from 'react';
+import { months } from '../../utils/dateUtils.js';
 import './header.scss';
+import Modal from '../modal/Modal.jsx';
 
-const format = 'MMMM';
-
-const Header = () => {
-  const [month, setMonth] = useState(moment());
-
-  const getCurrentDay = (e) => {
-    if (e.target.classList.contains('navigation__today-btn')) {
-      setMonth(moment());
-      console.log('current', month);
-    }
-  };
-
-  const switchWeeks = (e) => {
-    if (e.target.classList.contains('fa-chevron-left')) {
-      setMonth(month.subtract(7, 'day'));
-      console.log(month);
-    } else if (e.target.classList.contains('fa-chevron-right')) {
-      setMonth(month.add(7, 'day'));
-      console.log(month);
-    }
-  };
+const Header = ({ openModal, weekStartDate, getCurrentDay, switchWeeks }) => {
   return (
     <header className="header">
-      <button className="button create-event-btn">
+      <button className="button create-event-btn" onClick={openModal}>
         <i className="fas fa-plus create-event-btn__icon"></i>Create
       </button>
       <div className="navigation">
@@ -48,7 +29,7 @@ const Header = () => {
           <i className="fas fa-chevron-right"></i>
         </button>
         <span className="navigation__displayed-month">
-          {month.format('MMMM')}
+          {months[weekStartDate.getMonth()]}
         </span>
       </div>
     </header>

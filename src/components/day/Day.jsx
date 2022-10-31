@@ -1,5 +1,6 @@
 import React from 'react';
 import Hour from '../hour/Hour';
+import RedLine from '../redLine/RedLine';
 
 import './day.scss';
 
@@ -17,7 +18,14 @@ const Day = ({ dataDay, dayEvents }) => {
         );
 
         return (
-          <Hour key={dataDay + hour} dataHour={hour} hourEvents={hourEvents} />
+          <>
+            <Hour
+              dataDay={dataDay}
+              key={dataDay + hour}
+              dataHour={hour}
+              hourEvents={hourEvents}
+            />
+          </>
         );
       })}
     </div>

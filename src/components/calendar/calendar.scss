@@ -65,6 +65,17 @@
   }
 }
 
+.active {
+  border-radius: 50%;
+
+  background: blue;
+
+  color: white;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
 .red-line {
   position: absolute;
   width: 100%;

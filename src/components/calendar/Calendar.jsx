@@ -5,6 +5,7 @@ import Week from '../week/Week';
 import Sidebar from '../sidebar/Sidebar';
 import events from '../../gateway/events';
 import './calendar.scss';
+import RedLine from '../redLine/RedLine';
 
 // class Calendar extends Component {
 //   state = {

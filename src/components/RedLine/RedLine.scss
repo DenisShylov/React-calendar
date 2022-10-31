@@ -1,0 +1,18 @@
+.red_time {
+  display: flex;
+  // width: 122px;
+
+  &-line {
+    position: relative;
+    // width: 122px;
+
+    border-top: 2px solid red;
+    z-index: 5;
+  }
+  &-circle {
+    border-radius: 50%;
+    background: red;
+    width: 10px;
+    height: 10px;
+  }
+}
